@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
@@ -14,42 +15,53 @@ class SignInState extends State<SignIn> {
   @override
   Widget build(BuildContext context) {
     ScreenUtil.init(context, width: 375, height: 812);
-    return SingleChildScrollView(
-      child: Container(
-        color: Colors.white,
-        child: SafeArea(
+    return CupertinoPageScaffold(
+      child: SafeArea(
+        child: Container(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
+              SizedBox(
+                height: ScreenUtil().setHeight(32),
+              ),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.baseline,
+                textBaseline: TextBaseline.alphabetic,
                 children: <Widget>[
-                  Text('Welcome to', style: TextStyle(
-                    color: LightTheme.black,
-                    fontSize: ScreenUtil().setSp(24),
-                    fontFamily: 'Lato',
-                    fontWeight: FontWeight.bold,
-                    decoration: TextDecoration.none
-                  )),
-                  Text('Mua`s', style: TextStyle(
-                    color: LightTheme.secondary,
-                    fontSize: ScreenUtil().setSp(38),
-                    fontFamily: 'Lato',
-                    fontWeight: FontWeight.w800,
-                    decoration: TextDecoration.none
-                  )),
+                  Expanded(
+                    child: Text('Welcome to', textAlign: TextAlign.right, style: TextStyle(
+                      color: LightTheme.black,
+                      fontSize: ScreenUtil().setSp(24),
+                      fontFamily: 'Lato',
+                      fontWeight: FontWeight.bold,
+                      decoration: TextDecoration.none
+                    )),
+                  ),
+                  SizedBox(width: ScreenUtil().setWidth(6)),
+                  Expanded(
+                    child: Text('Mua’s', style: TextStyle(
+                      color: LightTheme.secondary,
+                      fontSize: ScreenUtil().setSp(38),
+                      fontFamily: 'Lato',
+                      fontWeight: FontWeight.w800,
+                      decoration: TextDecoration.none
+                    )),
+                  ),
                 ],
               ),
-              Text('place for professionals', style: TextStyle(
-                color: LightTheme.label,
-                fontSize: ScreenUtil().setSp(14),
-                fontFamily: 'Lato',
-                fontWeight: FontWeight.normal,
-                decoration: TextDecoration.none
-              )),
               Container(
-                width: ScreenUtil().setWidth(375),
-                height: ScreenUtil().setHeight(350),
+                padding: EdgeInsets.only(
+                  left: ScreenUtil().setWidth(150),
+                ),
+                child: Text('place for professionals', textAlign: TextAlign.left, style: TextStyle(
+                  color: LightTheme.label,
+                  fontSize: ScreenUtil().setSp(14),
+                  fontFamily: 'Lato',
+                  fontWeight: FontWeight.normal,
+                  decoration: TextDecoration.none
+                )),
+              ),
+              Expanded(
                 child: Swiper(
                   itemBuilder: (BuildContext context, int index) {
                     int n = index + 1;
@@ -93,7 +105,7 @@ class SignInState extends State<SignIn> {
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: <Widget>[
-                            Icon(FontAwesomeIcons.facebookF, size: ScreenUtil().setSp(24)),
+                            Icon(FontAwesomeIcons.facebookF, size: ScreenUtil().setSp(18)),
                             SizedBox(
                               width: ScreenUtil().setWidth(8),
                             ),
@@ -122,7 +134,7 @@ class SignInState extends State<SignIn> {
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: <Widget>[
-                            Icon(FontAwesomeIcons.google, size: ScreenUtil().setSp(24)),
+                            Icon(FontAwesomeIcons.google, size: ScreenUtil().setSp(18)),
                             SizedBox(
                               width: ScreenUtil().setWidth(8),
                             ),
@@ -151,7 +163,7 @@ class SignInState extends State<SignIn> {
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: <Widget>[
-                            Icon(FontAwesomeIcons.apple, size: ScreenUtil().setSp(24)),
+                            Icon(FontAwesomeIcons.apple, size: ScreenUtil().setSp(18)),
                             SizedBox(
                               width: ScreenUtil().setWidth(8),
                             ),
@@ -220,6 +232,6 @@ class SignInState extends State<SignIn> {
   }
 
   void onSignUp() {
-    print('apple');
+    print('signup');
   }
 }
