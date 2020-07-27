@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_statusbarcolor/flutter_statusbarcolor.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tinycolor/tinycolor.dart';
@@ -16,9 +16,7 @@ class SignIn extends StatefulWidget {
 class SignInState extends State<SignIn> {
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarIconBrightness: Brightness.dark,
-    ));
+    FlutterStatusbarcolor.setStatusBarWhiteForeground(false);
     ScreenUtil.init(context, width: 375, height: 812);
     return CupertinoPageScaffold(
       child: SafeArea(
