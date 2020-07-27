@@ -4,6 +4,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'scenes/CreateAccount.dart';
 import 'scenes/SignIn.dart';
 
 void main() => runApp(MyApp());
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/signin',
       routes: {
         '/signin': (context) => SignIn(),
+        '/createAccount': (context) => CreateAccount(),
       },
     );
   }

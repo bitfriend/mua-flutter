@@ -5,6 +5,7 @@ import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:tinycolor/tinycolor.dart';
 import '../theme/light.dart';
+import 'CreateAccount.dart';
 
 class SignIn extends StatefulWidget {
   @override
@@ -233,5 +234,8 @@ class SignInState extends State<SignIn> {
 
   void onSignUp() {
     print('signup');
+    Navigator.push(context, MaterialPageRoute(
+      builder: (context) => CreateAccount(),
+    ));
   }
 }
