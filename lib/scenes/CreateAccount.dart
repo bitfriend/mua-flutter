@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../theme/light.dart';
 
 class CreateAccount extends StatefulWidget {
@@ -47,10 +48,34 @@ class CreateAccountState extends State<CreateAccount> {
                 fontFamily: 'Roboto',
                 fontWeight: FontWeight.normal,
               )),
+              RaisedButton(
+                onPressed: onArtistPressed,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(ScreenUtil().setWidth(12))
+                ),
+                padding: EdgeInsets.symmetric(
+                  horizontal: ScreenUtil().setWidth(24),
+                  vertical: ScreenUtil().setHeight(24),
+                ),
+                child: Column(
+                  children: <Widget>[
+                    Row(
+                      children: <Widget>[
+                        Text('As an Artist'),
+                        Icon(FontAwesomeIcons.dotCircle, size: ScreenUtil().setSp(18), color: LightTheme.secondary),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
       ),
     );
   }
+
+  void onArtistPressed() {}
+
+  void onClientPressed() {}
 }
