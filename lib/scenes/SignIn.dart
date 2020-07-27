@@ -16,7 +16,10 @@ class SignIn extends StatefulWidget {
 class SignInState extends State<SignIn> {
   @override
   Widget build(BuildContext context) {
-    FlutterStatusbarcolor.setStatusBarWhiteForeground(false);
+    if (useWhiteForeground(LightTheme.container))
+      FlutterStatusbarcolor.setStatusBarWhiteForeground(true);
+    else
+      FlutterStatusbarcolor.setStatusBarWhiteForeground(false);
     ScreenUtil.init(context, width: 375, height: 812);
     return CupertinoPageScaffold(
       child: SafeArea(
