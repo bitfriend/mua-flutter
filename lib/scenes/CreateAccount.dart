@@ -12,7 +12,6 @@ class CreateAccount extends StatefulWidget {
 class CreateAccountState extends State<CreateAccount> {
   @override
   Widget build(BuildContext context) {
-    FlutterStatusbarcolor.setStatusBarWhiteForeground(false);
     ScreenUtil.init(context, width: 375, height: 812);
     return Scaffold(
       appBar: AppBar(
@@ -21,6 +20,7 @@ class CreateAccountState extends State<CreateAccount> {
         iconTheme: IconThemeData(
           color: LightTheme.title,
         ),
+        brightness: useWhiteForeground(LightTheme.container) ? Brightness.dark : Brightness.light,
       ),
       body: SafeArea(
         child: Container(
