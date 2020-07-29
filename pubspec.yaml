@@ -21,6 +21,8 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+  apple_sign_in: ^0.1.0
+
   flutter:
     sdk: flutter
 
